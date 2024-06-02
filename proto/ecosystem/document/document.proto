@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package document_pb;
+
+option go_package = "ecosystem/document/document_pb";
+
+message DocumentCreateRequest {
+  string url = 1;
+  int32 interval = 2;
+}
+
+message DocumentCreateReply {}

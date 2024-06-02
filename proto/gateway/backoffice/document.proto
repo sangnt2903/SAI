@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package backoffice;
+
+option go_package = "gateway/backoffice";
+
+message DocumentCreateRequest {}
+message DocumentCreateReply {}

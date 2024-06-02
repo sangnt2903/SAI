@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package backoffice;
+
+import "includes/openaiv2/options/annotation.proto";
+
+import "gateway/backoffice/document.proto";
+
+option go_package = "gateway/backoffice";
+
+message PingRequest {}
+message PingReply {}
+
+service Service {
+  rpc Ping(PingRequest) returns (PingReply) {
+  }
+
+  rpc CreateDocument(DocumentCreateRequest) returns (DocumentCreateReply) {
+
+  }
+}
+
+
