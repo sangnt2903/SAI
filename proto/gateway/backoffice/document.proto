@@ -1,8 +1,12 @@
 syntax = "proto3";
 
-package backoffice;
+package backoffice_pb;
 
-option go_package = "gateway/backoffice";
+option go_package = "gateway/backoffice/backoffice_pb";
 
-message DocumentCreateRequest {}
+message DocumentCreateRequest {
+  string url = 1;
+  int32 interval = 2;
+}
+
 message DocumentCreateReply {}

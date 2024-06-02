@@ -3,7 +3,7 @@ protoc:
 
 gen:
 ifdef service
-	docker run -it --rm \
+	@docker run -it --rm \
 	-e SERVICE=$(service) \
 	-v ./:/defs \
 	-v ./generated/:/generated \
