@@ -1,0 +1,46 @@
+syntax = "proto3";
+package document_pb;
+
+import "includes/openaiv2/options/annotation.proto";
+import "includes/google/api/annotation.proto";
+import "ecosystem/document/document.proto";
+
+option go_package = "ecosystem/document/document_pb";
+
+option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
+  info: {
+    title: "Document";
+    version: "1.0";
+    contact: {
+      name: "SANGO";
+      email: "sangnguyen.itp@gmail.com";
+    };
+    license: {
+      name: "MIT";
+    };
+  };
+  schemes: HTTP;
+  schemes: HTTPS;
+  consumes: "application/json";
+  produces: "application/json";
+};
+
+message PingRequest {}
+message PingReply {}
+
+service Service {
+  rpc Ping(PingRequest) returns (PingReply) {
+    option(google.api.http) = {
+      get: "/ping"
+    };
+  }
+
+  rpc CreateDocument(DocumentCreateRequest) returns (DocumentCreateReply) {
+    option(google.api.http) = {
+      post: "/document/create"
+      body: "*"
+    };
+  }
+}
+
+
